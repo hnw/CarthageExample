@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0F7E551D0DB95300869EAF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F7E531D0DB95300869EAF /* SwiftyJSON.framework */; };
+		FE0F7E561D0DB95300869EAF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F7E541D0DB95300869EAF /* Alamofire.framework */; };
 		FE48A53A1D0D9378006351F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48A5391D0D9378006351F3 /* AppDelegate.swift */; };
 		FE48A53C1D0D9378006351F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48A53B1D0D9378006351F3 /* ViewController.swift */; };
 		FE48A53F1D0D9378006351F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE48A53D1D0D9378006351F3 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE0F7E531D0DB95300869EAF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FE0F7E541D0DB95300869EAF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		FE48A5361D0D9378006351F3 /* CarthageExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarthageExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE48A5391D0D9378006351F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE48A53B1D0D9378006351F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0F7E551D0DB95300869EAF /* SwiftyJSON.framework in Frameworks */,
+				FE0F7E561D0DB95300869EAF /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		FE48A52D1D0D9378006351F3 = {
 			isa = PBXGroup;
 			children = (
+				FE0F7E531D0DB95300869EAF /* SwiftyJSON.framework */,
+				FE0F7E541D0DB95300869EAF /* Alamofire.framework */,
 				FE48A5381D0D9378006351F3 /* CarthageExample */,
 				FE48A54D1D0D9378006351F3 /* CarthageExampleTests */,
 				FE48A5581D0D9378006351F3 /* CarthageExampleUITests */,
@@ -135,6 +143,7 @@
 				FE48A5321D0D9378006351F3 /* Sources */,
 				FE48A5331D0D9378006351F3 /* Frameworks */,
 				FE48A5341D0D9378006351F3 /* Resources */,
+				FE0F7E571D0DB96100869EAF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +259,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE0F7E571D0DB96100869EAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE48A5321D0D9378006351F3 /* Sources */ = {
@@ -399,6 +426,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hnw.CarthageExample;
@@ -410,6 +441,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hnw.CarthageExample;
@@ -482,6 +517,7 @@
 				FE48A5601D0D9378006351F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE48A5611D0D9378006351F3 /* Build configuration list for PBXNativeTarget "CarthageExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +526,7 @@
 				FE48A5631D0D9378006351F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE48A5641D0D9378006351F3 /* Build configuration list for PBXNativeTarget "CarthageExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +535,7 @@
 				FE48A5661D0D9378006351F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
